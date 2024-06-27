@@ -1,0 +1,68 @@
+# Copyright 2021 DeepMind Technologies Limited
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alphafold"
+version = '2.3.2' 
+description = "An implementation of the inference pipeline of AlphaFold v2.0. This is a completely new model that was entered as AlphaFold2 in CASP14 and published in Nature."
+readme = "README.md"
+requires-python = ">=3.6"
+license = { text = "Apache License, Version 2.0" }
+authors = [
+    { name = "DeepMind", email = "alphafold@deepmind.com" }
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+    "absl-py == 1.0.0",
+    "biopython == 1.81",
+    "chex == 0.1.86",
+    "dm-haiku == 0.0.12",
+    "dm-tree == 0.1.8",
+    "docker == 5.0.0",
+    "immutabledict == 2.0.0",
+    "jax == 0.4.30",
+    "ml-collections == 0.1.0",
+    "numpy == 1.24.3",
+    "pandas == 2.0.3",
+    "scipy == 1.11.1",
+    "tensorflow-cpu == 2.16.1"
+]
+
+[project.urls]
+homepage = "https://github.com/deepmind/alphafold"
+
+
+[project.optional-dependencies]
+test = [
+    "matplotlib",  # For notebook_utils_test.
+    "mock"
+]
+
+[tool.setuptools.packages.find]
+where = ["alphafold"]
